@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf Classifier</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1><br><br>Medicinal Plant Identification</h1><br><br></h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*">
+        <button type="submit">Classify</button>
+    </form>
+    {% if predicted_class %}
+    <h2>Predicted Leaf Name: {{ predicted_class }}</h2>
+    <img src="data:image/png;base64,{{ image_data }}" alt="Predicted Leaf">
+    {% endif %}
+</body>
+</html>
